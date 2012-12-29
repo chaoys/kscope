@@ -1,0 +1,301 @@
+<ui version="4.0" >
+ <class>ProjectDialog</class>
+ <widget class="QDialog" name="ProjectDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>479</width>
+    <height>335</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" >
+   <item>
+    <widget class="QTabWidget" name="configTabs_" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab" >
+      <attribute name="title" >
+       <string>General</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6" >
+       <item>
+        <layout class="QFormLayout" name="formLayout" >
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label" >
+           <property name="text" >
+            <string>Name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLineEdit" name="nameEdit_" />
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_2" >
+           <property name="text" >
+            <string>Root Path</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QWidget" native="1" name="rootPathWidget_" >
+           <layout class="QHBoxLayout" name="horizontalLayout" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLineEdit" name="rootPathEdit_" />
+            </item>
+            <item>
+             <widget class="QToolButton" name="browseRootPathButton_" >
+              <property name="text" >
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="projectPathGroup_" >
+         <property name="title" >
+          <string>Project Configuration Directory</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3" >
+          <item>
+           <widget class="QLabel" name="projectPathLabel_" >
+            <property name="text" >
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="namedDirButton_" >
+            <property name="text" >
+             <string>Use a named directory under the following path:</string>
+            </property>
+            <property name="checked" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" native="1" name="projectPathWidget_" >
+            <layout class="QVBoxLayout" name="verticalLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2" >
+               <item>
+                <widget class="QLineEdit" name="projectPathEdit_" />
+               </item>
+               <item>
+                <widget class="QToolButton" name="browseProjectPathButton_" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="hiddenDirButton_" >
+            <property name="text" >
+             <string>Use a hidden directory under the root path</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>nameEdit_</tabstop>
+  <tabstop>rootPathEdit_</tabstop>
+  <tabstop>browseRootPathButton_</tabstop>
+  <tabstop>namedDirButton_</tabstop>
+  <tabstop>projectPathEdit_</tabstop>
+  <tabstop>browseProjectPathButton_</tabstop>
+  <tabstop>hiddenDirButton_</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>configTabs_</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>236</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>304</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>286</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browseProjectPathButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>browseProjectPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>446</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>472</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browseRootPathButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>browseRootPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>445</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>470</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>namedDirButton_</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>projectPathWidget_</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>406</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>413</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>projectPathEdit_</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>updateProjectPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>350</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>474</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>namedDirButton_</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>updateProjectPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>68</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rootPathEdit_</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>updateProjectPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>236</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>476</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nameEdit_</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ProjectDialog</receiver>
+   <slot>updateProjectPath()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>161</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>474</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>browseRootPath()</slot>
+  <slot>browseProjectPath()</slot>
+  <slot>updateProjectPath()</slot>
+ </slots>
+</ui>

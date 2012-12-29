@@ -1,0 +1,47 @@
+1.9.4 (2009-03-12)
+* Bug fix: New projects were not created properly
+
+1.9.3 (2009-03-12)
+* New: Limited Vi compatibility (several movement and editing commands implemented)
+* New: Hierarchical editor styles
+* New: Import/export editor styles
+* New: More visual options for the editor
+* New: Go to beginning of block menu action
+* New: Handle changes to project configuration parameters
+* Improved: Better handling of editor menu actions
+* Bug fix: Show typedefs in local tags
+* Bug fix: Clear the query type list before prompting for a new query
+* Compilation fix: Avoid error in createIndex() on a 64-bit OS
+
+1.9.2 (2009-02-13)
+* New: "Open Project" dialogue with recent projects
+* New: Added a "Close All" action to the file menu
+* New: Pattern history in the query dialogue
+* New: A context menu for filtering query results and for reexecuting queries
+* New: Menu command for switching the UI between tabbed and sub-window views
+* New: Show cursor position for the active editor
+* Improved: Restore maximised editor windows when loading a session
+* Improved: Handle name changes to files
+* Improved: Close all open queries when closing a project
+* Improved: The build progress bar no longer changes the height of the status bar
+* Improved: Many enhancements to the editor configuration dialogue
+* Bug fix: Do not requery expanded empty items upon loading from XML
+* Bug fix: Do not crash when a new file is closed
+* Bug fix: Resize columns and set root path in restored queries
+* Bug fix: Clear location history when closing a project
+* Bug fix: Cscope parser should remove whitespace after the line number
+* Bug fix: Adjust column width in the location history view
+* Bug fix: More fixes to the handling of the active editor
+
+1.9.1 (2009-01-26)
+* New: Save/restore queries as part of a session
+* Improved: Better session handling
+* Bug fix: Several fixes to the Cscope output parser
+* Bug fix: Fixed crash when selecting the first item in the history
+* Bug fix: Use the correct path when loading project files
+* Bug fix: Correct detection of the active editor
+* Compilation fix: Explicitly link libkscope_cscope with libkscope_core
+* Documentation: Added instructions for running KScope to the INSTALL file
+
+1.9.0 (2009-01-10)
+* Initial release of the new code

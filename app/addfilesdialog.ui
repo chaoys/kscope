@@ -1,0 +1,333 @@
+<ui version="4.0" >
+ <class>AddFilesDialog</class>
+ <widget class="QDialog" name="AddFilesDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>507</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Add Files</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3" >
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" >
+     <item>
+      <widget class="QPushButton" name="filesButton_" >
+       <property name="text" >
+        <string>&amp;Files...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dirButton_" >
+       <property name="text" >
+        <string>&amp;Directory...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="treeButton_" >
+       <property name="text" >
+        <string>&amp;Tree...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title" >
+      <string>Filter</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QLineEdit" name="filterEdit_" >
+        <property name="text" >
+         <string>*.c;*.h</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" >
+        <item>
+         <spacer name="horizontalSpacer_2" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="loadFilterButton_" >
+          <property name="text" >
+           <string>&amp;Load...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveFilterButton_" >
+          <property name="text" >
+           <string>&amp;Save As...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title" >
+      <string>Files</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" >
+      <item>
+       <widget class="QListWidget" name="fileList_" >
+        <property name="selectionMode" >
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2" >
+        <item>
+         <widget class="QPushButton" name="deleteFileButton_" >
+          <property name="text" >
+           <string>De&amp;lete</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearFilesButton_" >
+          <property name="text" >
+           <string>&amp;Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2" >
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>227</x>
+     <y>485</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>295</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filesButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>addFiles()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>66</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dirButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>addDir()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>160</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>180</x>
+     <y>10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>addTree()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>240</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>304</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearFilesButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>fileList_</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>495</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>440</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadFilterButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>loadFilter()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>430</x>
+     <y>130</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>538</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveFilterButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>saveFilter()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>506</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>544</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteFileButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>AddFilesDialog</receiver>
+   <slot>deleteSelectedFiles()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>492</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>275</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>addFiles()</slot>
+  <slot>addDir()</slot>
+  <slot>addTree()</slot>
+  <slot>loadFilter()</slot>
+  <slot>saveFilter()</slot>
+  <slot>deleteSelectedFiles()</slot>
+ </slots>
+</ui>

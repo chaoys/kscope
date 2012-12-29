@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images" >
+        <file alias="cancel" >images/cancel.gif</file>
+        <file alias="define" >images/define.gif</file>
+        <file alias="enum" >images/enum.gif</file>
+        <file alias="enumerator" >images/enumerator.gif</file>
+        <file alias="function" >images/function.gif</file>
+        <file alias="include" >images/include.gif</file>
+        <file alias="member" >images/member.gif</file>
+        <file alias="struct" >images/struct.gif</file>
+        <file alias="typedef" >images/typedef.gif</file>
+        <file alias="union" >images/union.gif</file>
+        <file alias="variable" >images/variable.gif</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,9 @@
+app/object_script.kscopeapp.Debug
+app/object_script.kscopeapp.Release
+core/object_script.kscope_core.Debug
+core/object_script.kscope_core.Release
+cscope/object_script.kscope_cscope.Debug
+cscope/object_script.kscope_cscope.Release
+editor/object_script.kscope_editor.Debug
+editor/object_script.kscope_editor.Release
+kscope.pro.user

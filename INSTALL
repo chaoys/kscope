@@ -1,0 +1,45 @@
+Building and Installing KScope
+==============================
+
+Prerequisites
+-------------
+
+- Qt4 version 4.4.0 and above
+- QScintilla2 (http://www.riverbankcomputing.co.uk/software/qscintilla/download)
+- Standard build tools
+
+Configure
+---------
+
+Edit the 'config' file as necessary.
+Please make sure that all paths are set up correctly before building KScope.
+Any changes to the configuration file require a fresh build (starting with 
+an invocation of qmake).
+
+Build
+-----
+
+In a shell, execute
+
+  $ qmake
+  $ make
+or
+
+  $ make debug
+
+for a debug-enabled build.
+
+Install
+-------
+
+Make sure you have the right permissions for copying files into the destination
+directory. Then execute
+
+  $ make install
+
+Run
+---
+
+The executable is called 'kscopeapp' and is located under INSTALL_PATH/bin. The
+shared libraries are under INSTALL_PATH/lib, so LD_LIBRARY_PATH needs to include
+this directory for the dynamic linker to find them.

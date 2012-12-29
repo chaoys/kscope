@@ -1,0 +1,60 @@
+<ui version="4.0" >
+ <class>ConfigWidget</class>
+ <widget class="QWidget" name="ConfigWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Cscope Configuration</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QCheckBox" name="kernelCheck_" >
+     <property name="text" >
+      <string>Kernel project (do not index user-space include files)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="invIndexCheck_" >
+     <property name="text" >
+      <string>Build inverted index</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="compressCheck_" >
+     <property name="text" >
+      <string>Compress database</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>20</width>
+       <height>203</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

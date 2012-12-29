@@ -1,0 +1,256 @@
+<ui version="4.0" >
+ <class>OpenProjectDialog</class>
+ <widget class="QDialog" name="OpenProjectDialog" >
+  <property name="enabled" >
+   <bool>true</bool>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>418</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Open Project</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" >
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Path</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="pathEdit_" />
+     </item>
+     <item>
+      <widget class="QToolButton" name="browseButton_" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>Recent Projects</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QListWidget" name="recentProjectsList_" />
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" >
+        <item>
+         <spacer name="horizontalSpacer" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeProjectButton_" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="text" >
+           <string>Remove</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" >
+     <item>
+      <widget class="QPushButton" name="newButton_" >
+       <property name="text" >
+        <string>&amp;New...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="openButton_" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>&amp;Open</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton_" >
+       <property name="text" >
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>pathEdit_</tabstop>
+  <tabstop>browseButton_</tabstop>
+  <tabstop>recentProjectsList_</tabstop>
+  <tabstop>removeProjectButton_</tabstop>
+  <tabstop>newButton_</tabstop>
+  <tabstop>openButton_</tabstop>
+  <tabstop>cancelButton_</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cancelButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>427</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>281</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>newButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>newProject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>68</x>
+     <y>392</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>134</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pathEdit_</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>pathChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>355</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>483</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recentProjectsList_</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>recentProjectSelected()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>180</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>482</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeProjectButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>removeProject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>439</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>351</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browseButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>browse()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>462</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>482</x>
+     <y>13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openButton_</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenProjectDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>356</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>298</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newProject()</slot>
+  <slot>pathChanged(QString)</slot>
+  <slot>recentProjectSelected()</slot>
+  <slot>removeProject()</slot>
+  <slot>browse()</slot>
+ </slots>
+</ui>

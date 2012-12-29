@@ -1,0 +1,21 @@
+# Common configuration options for all project files.
+
+# -------------------------- BEGIN: EDIT ME -----------------------------------
+
+# Change this value to the installation root path.
+# Executables will be installed under INSTALL_PATH/bin, libraries under
+# INSTALL_PATH/lib, etc.
+INSTALL_PATH = 
+
+# The root path of the QScintilla installation.
+QSCI_INCLUDE_PATH = 
+QSCI_LIB_PATH = 
+
+# --------------------------- END: EDIT ME ------------------------------------
+
+# The following lines should normally not be edited.
+#CONFIG += console
+CONFIG += debug_and_release \
+    warn_all 
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+QT += xml
