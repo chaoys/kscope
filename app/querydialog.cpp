@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QLineEdit>
+#include <QCompleter>
 #include <QMessageBox>
 #include <QDebug>
 #include "querydialog.h"
@@ -38,6 +39,11 @@ QueryDialog::QueryDialog(QWidget* parent)
 	: QDialog(parent), Ui::QueryDialog()
 {
 	setupUi(this);
+
+	QCompleter *cmplter;
+	cmplter = patternCombo_->lineEdit()->completer();
+	if (cmplter)
+	    cmplter->setCaseSensitivity(Qt::CaseSensitive);
 }
 
 /**
