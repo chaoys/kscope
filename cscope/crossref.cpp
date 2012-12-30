@@ -162,39 +162,41 @@ Crossref::queryFields(Core::Query::Type type) const
 void Crossref::query(Core::Engine::Connection* conn,
                      const Core::Query& query) const
 {
-	Cscope::QueryType type;
+	Cscope::QueryArg args;
 
+	args.flags = query.flags_;
+	
 	// Translate the requested type into a Cscope query number.
 	switch (query.type_) {
 	case Core::Query::Text:
 		if (query.flags_ & Core::Query::RegExp)
-			type = Cscope::EGrepPattern;
+			args.type = Cscope::EGrepPattern;
 		else
-			type = Cscope::Text;
+			args.type = Cscope::Text;
 		break;
 
 	case Core::Query::References:
-		type = Cscope::References;
+		args.type = Cscope::References;
 		break;
 
 	case Core::Query::Definition:
-		type = Cscope::Definition;
+		args.type = Cscope::Definition;
 		break;
 
 	case Core::Query::CalledFunctions:
-		type = Cscope::CalledFunctions;
+		args.type = Cscope::CalledFunctions;
 		break;
 
 	case Core::Query::CallingFunctions:
-		type = Cscope::CallingFunctions;
+		args.type = Cscope::CallingFunctions;
 		break;
 
 	case Core::Query::FindFile:
-		type = Cscope::FindFile;
+		args.type = Cscope::FindFile;
 		break;
 
 	case Core::Query::IncludingFiles:
-		type = Cscope::IncludingFiles;
+		args.type = Cscope::IncludingFiles;
 		break;
 
 	case Core::Query::LocalTags:
@@ -215,7 +217,7 @@ void Crossref::query(Core::Engine::Connection* conn,
 	// Create a new Cscope process object, and start the query.
 	Cscope* cscope = new Cscope();
 	cscope->setDeleteOnExit();
-	cscope->query(conn, path_, type, query.pattern_);
+	cscope->query(conn, path_, args, query.pattern_);
 }
 
 /**

@@ -60,7 +60,17 @@ public:
 		IncludingFiles = 8
 	};
 
-	void query(Core::Engine::Connection*, const QString&, QueryType,
+	/**
+	 * Cscope query type and extra arguments
+	 */
+	 struct QueryArg {
+		enum QueryType type;
+		uint flags;
+	};
+
+	QString flags2Str(uint flags);
+	
+	void query(Core::Engine::Connection*, const QString&, QueryArg,
 	           const QString&);
 	void build(Core::Engine::Connection*, const QString&, const QStringList&);
 

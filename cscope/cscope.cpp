@@ -91,6 +91,17 @@ Cscope::~Cscope()
 }
 
 /**
+ * Transform integer flags to string
+ */
+QString Cscope::flags2Str(uint flags)
+{
+	QString args;
+	if (flags & Core::Query::IgnoreCase)
+		args = "-C";
+	return args;
+}
+
+/**
  * Starts a Cscope query process.
  * The process performs a one-time, line-oriented query on the database, without
  * rebuilding it.
@@ -101,7 +112,7 @@ Cscope::~Cscope()
  * @throw  Exception
  */
 void Cscope::query(Core::Engine::Connection* conn, const QString& path,
-                   QueryType type, const QString& pattern)
+                   QueryArg extraArgs, const QString& pattern)
 {
 	// Abort if a process is already running.
 	if (state() != QProcess::NotRunning || conn_ != NULL)
@@ -111,7 +122,8 @@ void Cscope::query(Core::Engine::Connection* conn, const QString& path,
 	QStringList args;
 	args << "-d";
 	args << "-v";
-	args << QString("-L%1").arg(type);
+	args << flags2Str(extraArgs.flags);
+	args << QString("-L%1").arg(extraArgs.type);
 	args << pattern;
 	setWorkingDirectory(path);
 
@@ -120,7 +132,7 @@ void Cscope::query(Core::Engine::Connection* conn, const QString& path,
 	conn_->setCtrlObject(this);
 	setState(queryProgState_);
 	locList_.clear();
-	type_ = type;
+	type_ = extraArgs.type;
 
 	// Start the process.
 	qDebug() << "Running" << execPath_ << args << "in" << path;

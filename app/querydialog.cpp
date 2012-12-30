@@ -131,6 +131,8 @@ void QueryDialog::clear()
  */
 void QueryDialog::accept()
 {
+	caseless = (caseCheckBox_->checkState() == Qt::Checked) ? 0 : 1;
+	
 	// Get a trimmed version of the current text.
 	QString text = patternCombo_->lineEdit()->text().trimmed();
 	if (text.isEmpty()) {

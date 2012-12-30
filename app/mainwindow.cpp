@@ -113,9 +113,11 @@ void MainWindow::promptQuery(Core::Query::Type type)
 	if (queryDlg_->exec(type) != QDialog::Accepted)
 		return;
 
+	//arguments to cscope
+	uint flags = queryDlg_->caseless ? Core::Query::IgnoreCase : 0;
+	
 	// Start a query with results shown in a view inside the query dock.
-	queryDock_->query(Core::Query(queryDlg_->type(), queryDlg_->pattern()),
-	                  false);
+	queryDock_->query(Core::Query(queryDlg_->type(), queryDlg_->pattern(), flags), false);
 }
 
 /**

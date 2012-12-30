@@ -51,6 +51,8 @@ public:
 	Core::Query::Type type();
 	void clear();
 
+	bool caseless;
+	
 public slots:
 	void accept();
 };
