@@ -6,7 +6,7 @@
 class FileUtils
 {
 public:
-    static bool removeDir(const QString &dir);
+    static bool removeDir(const QString &dir, bool rmSelf);
 };
 
 #endif // FILEUTILS_H

@@ -153,7 +153,7 @@ void OpenProjectDialog::removeProject()
 	Application::settings().removeRecentProject(path);
 	delete item;
     // remove project directory
-    if (!FileUtils::removeDir(path))
+    if (!FileUtils::removeDir(path, true))
     {
         QMessageBox::critical(this, QString("removing project error"),
                               QString("cannot remove directory '%1'").arg(path));

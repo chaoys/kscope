@@ -22,6 +22,8 @@
 #include <QCloseEvent>
 #include <QStatusBar>
 #include <QFileDialog>
+#include <QMessageBox>
+#include <core/fileutils.h>
 #include <cscope/managedproject.h>
 #include <editor/editor.h>
 #include "mainwindow.h"
@@ -266,6 +268,7 @@ void MainWindow::newProject()
 			return;
 	}
 
+redo:
 	// Show the "New Project" dialogue.
 	ProjectDialog dlg(this);
 	dlg.setParamsForProject<Cscope::ManagedProject>(NULL);
@@ -277,6 +280,23 @@ void MainWindow::newProject()
 	dlg.getParams<Cscope::ManagedProject>(params);
 
 	try {
+        QDir dir(params.projPath_);
+        if (dir.exists()) {
+            QString str = QString("'%1' already exists, overwrite it?").arg(params.projPath_);
+            QMessageBox warn("New project",
+                             str,
+                             QMessageBox::Warning,
+                             QMessageBox::Yes,
+                             QMessageBox::No | QMessageBox::Default,
+                             QMessageBox::NoButton,
+                             this);
+            int act = warn.exec();
+            if (act == QMessageBox::NoRole)
+                goto redo;
+            //YesRole
+            FileUtils::removeDir(params.projPath_, false);
+        }
+
 		// Create a project.
 		Cscope::ManagedProject proj;
 		proj.create(params);
