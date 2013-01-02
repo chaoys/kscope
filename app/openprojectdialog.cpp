@@ -18,9 +18,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  ***************************************************************************/
 
+#include <QMessageBox>
 #include <QFileDialog>
 #include "openprojectdialog.h"
 #include "application.h"
+#include "core/fileutils.h"
 
 namespace KScope
 {
@@ -150,6 +152,12 @@ void OpenProjectDialog::removeProject()
 	QString path = item->data(Qt::UserRole).toString();
 	Application::settings().removeRecentProject(path);
 	delete item;
+    // remove project directory
+    if (!FileUtils::removeDir(path))
+    {
+        QMessageBox::critical(this, QString("removing project error"),
+                              QString("cannot remove directory '%1'").arg(path));
+    }
 }
 
 } // namespace App

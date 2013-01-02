@@ -23,7 +23,8 @@ HEADERS += locationtreemodel.h \
     progressbar.h \
     engine.h \
     locationview.h \
-    textfilterdialog.h
+    textfilterdialog.h \
+    fileutils.h
 FORMS += progressbar.ui \
     textfilterdialog.ui
 SOURCES += locationtreemodel.cpp \
@@ -35,7 +36,8 @@ SOURCES += locationtreemodel.cpp \
     process.cpp \
     progressbar.cpp \
     locationview.cpp \
-    textfilterdialog.cpp
+    textfilterdialog.cpp \
+    fileutils.cpp
 RESOURCES = core.qrc
 target.path = $${INSTALL_PATH}/lib
 INSTALLS += target
