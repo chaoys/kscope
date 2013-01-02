@@ -282,18 +282,15 @@ redo:
 	try {
         QDir dir(params.projPath_);
         if (dir.exists()) {
-            QString str = QString("'%1' already exists, overwrite it?").arg(params.projPath_);
-            QMessageBox warn("New project",
-                             str,
-                             QMessageBox::Warning,
-                             QMessageBox::Yes,
-                             QMessageBox::No | QMessageBox::Default,
-                             QMessageBox::NoButton,
-                             this);
-            int act = warn.exec();
-            if (act == QMessageBox::NoRole)
+            QString msg = QString("'%1' already exists, overwrite it?").arg(params.projPath_);
+            int result = QMessageBox::question(this,
+                                               tr("New Project"),
+                                               msg,
+                                               QMessageBox::Yes | QMessageBox::No,
+                                               QMessageBox::No);
+            if (result == QMessageBox::No)
                 goto redo;
-            //YesRole
+            //Yes
             FileUtils::removeDir(params.projPath_, false);
         }
 
