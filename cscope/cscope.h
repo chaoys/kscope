@@ -68,7 +68,7 @@ public:
 		uint flags;
 	};
 
-	QString flags2Str(uint flags);
+    QStringList flags2Str(uint flags);
 	
 	void query(Core::Engine::Connection*, const QString&, QueryArg,
 	           const QString&);

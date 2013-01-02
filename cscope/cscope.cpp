@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QDebug>
+#include <QMessageBox>
 #include <core/exception.h>
 #include "cscope.h"
 
@@ -93,11 +94,13 @@ Cscope::~Cscope()
 /**
  * Transform integer flags to string
  */
-QString Cscope::flags2Str(uint flags)
+QStringList Cscope::flags2Str(uint flags)
 {
-	QString args;
+    QStringList args;
+    //dummy arg, in case flags contains nothing
+    args << "-";
 	if (flags & Core::Query::IgnoreCase)
-		args = "-C";
+        args << "-C";
 	return args;
 }
 
@@ -122,7 +125,7 @@ void Cscope::query(Core::Engine::Connection* conn, const QString& path,
 	QStringList args;
 	args << "-d";
 	args << "-v";
-	args << flags2Str(extraArgs.flags);
+    args += flags2Str(extraArgs.flags);
 	args << QString("-L%1").arg(extraArgs.type);
 	args << pattern;
 	setWorkingDirectory(path);
@@ -154,7 +157,7 @@ void Cscope::build(Core::Engine::Connection* conn, const QString& path,
 		throw Core::Exception("Process already running");
 
 	// TODO: Make the Cscope path configurable.
-	QString prog = "D:\\kscope-standalone\\cscope.exe";
+	QString prog = execPath_;
 
 	// Prepare the argument list.
 	QStringList args = buildArgs;
