@@ -5,11 +5,11 @@
 # Change this value to the installation root path.
 # Executables will be installed under INSTALL_PATH/bin, libraries under
 # INSTALL_PATH/lib, etc.
-INSTALL_PATH = 
+INSTALL_PATH = /home/cys/kscope/
 
 # The root path of the QScintilla installation.
-QSCI_INCLUDE_PATH = 
-QSCI_LIB_PATH = 
+QSCI_INCLUDE_PATH = /home/cys/QtSDK/Desktop/Qt/4.8.1/gcc/include/Qsci
+QSCI_LIB_PATH = /home/cys/QtSDK/Desktop/Qt/4.8.1/gcc/lib
 
 # --------------------------- END: EDIT ME ------------------------------------
 
@@ -17,5 +17,11 @@ QSCI_LIB_PATH =
 #CONFIG += console
 CONFIG += debug_and_release \
     warn_all 
-CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+CONFIG(release, debug|release) {
+	DEFINES += QT_NO_DEBUG_OUTPUT 
+	DESTDIR = ./release/
+}
+else {
+	DESTDIR = ./debug/
+}
 QT += xml
