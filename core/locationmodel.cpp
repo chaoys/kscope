@@ -58,7 +58,7 @@ void LocationModel::setRootPath(const QString& path)
 
 	if (actPath != rootPath_) {
 		rootPath_ = actPath;
-		reset();
+                //reset();
 	}
 }
 

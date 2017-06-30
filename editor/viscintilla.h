@@ -23,7 +23,7 @@
 
 #include <QKeyEvent>
 #include <QMultiHash>
-#include <qsciscintilla.h>
+#include <Qsci/qsciscintilla.h>
 
 namespace KScope
 {

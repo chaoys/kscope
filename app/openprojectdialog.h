@@ -57,7 +57,7 @@ public:
 		Cancel
 	};
 
-	ExecResult exec();
+        int exec();
 
 	/**
 	 * @return The text currently selected in the path edit widget

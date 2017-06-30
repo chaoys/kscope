@@ -49,12 +49,14 @@ void CodebaseModel::addFiles(const QStringList& fileList)
 {
 	// Add each of the files in the list to the tree structure.
 	QStringList::ConstIterator itr;
+        beginResetModel();
 	for (itr = fileList.begin(); itr != fileList.end(); ++itr)
 		addFile(*itr);
+        endResetModel();
 
 	// It's much easier to just reset the model than to emit individual
 	// dataChanged() signals, since files are added all over the tree.
-	reset();
+        //reset();
 }
 
 /**

@@ -23,9 +23,9 @@
 
 #include <QObject>
 #include <QSettings>
-#include <qscilexercpp.h>
-#include <qscilexermakefile.h>
-#include <qscilexerbash.h>
+#include <Qsci/qscilexercpp.h>
+#include <Qsci/qscilexermakefile.h>
+#include <Qsci/qscilexerbash.h>
 #include "viscintilla.h"
 
 namespace KScope

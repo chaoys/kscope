@@ -51,7 +51,8 @@ OpenProjectDialog::~OpenProjectDialog()
  * Shows the dialogue in modal mode.
  * @return See ExecResult
  */
-OpenProjectDialog::ExecResult OpenProjectDialog::exec()
+//OpenProjectDialog::ExecResult OpenProjectDialog::exec()
+int OpenProjectDialog::exec()
 {
 	// Populate the "Recent Projects" list.
 	bool first = true;

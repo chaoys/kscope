@@ -106,9 +106,10 @@ void LocationListModel::clear(const QModelIndex& parent)
 	if (locList_.isEmpty())
 		return;
 
+        beginResetModel();
 	locList_.clear();
 	locationsAdded_ = false;
-	reset();
+        endResetModel();
 }
 
 /**

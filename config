@@ -13,6 +13,8 @@ QSCI_LIB_PATH =
 
 # --------------------------- END: EDIT ME ------------------------------------
 
+CONFIG += qscintilla2
+
 # The following lines should normally not be edited.
 #CONFIG += console
 CONFIG += debug_and_release \
@@ -24,4 +26,7 @@ CONFIG(release, debug|release) {
 else {
 	DESTDIR = ./debug/
 }
+
+QT += core
 QT += xml
+QT += widgets

@@ -23,7 +23,7 @@
 
 #include <QAbstractItemModel>
 #include <QSettings>
-#include <qscilexer.h>
+#include <Qsci/qscilexer.h>
 #include <core/treeitem.h>
 #include "config.h"
 

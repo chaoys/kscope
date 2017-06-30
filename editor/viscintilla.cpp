@@ -632,12 +632,12 @@ void ViScintilla::keyPressEvent(QKeyEvent* event)
 			return;
 
 		default:
-			key = event->text()[0].toAscii();
+                        key = event->text()[0].toLatin1();
 		}
 		break;
 
 	case Qt::ShiftModifier:
-		key = event->text()[0].toAscii();
+                key = event->text()[0].toLatin1();
 		break;
 
 	default:

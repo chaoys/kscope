@@ -22,6 +22,7 @@
 #define __CORE_GLOBALS_H__
 
 #include <QString>
+#include <QVariant>
 
 namespace KScope
 {
