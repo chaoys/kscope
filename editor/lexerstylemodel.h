@@ -119,6 +119,7 @@ private:
 	struct NodeData
 	{
 		virtual NodeType type() const = 0;
+        virtual ~NodeData(){}
 	};
 
 	/**
@@ -187,6 +188,7 @@ private:
 			else
 				style_ = style;
 		}
+        virtual ~StyleData(){}
 
 		/**
 		 * @return The type of this node

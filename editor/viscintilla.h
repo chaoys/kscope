@@ -201,6 +201,8 @@ struct ViCommand
 	 */
 	virtual ProcessResult processKey(char key, ViScintilla* editor,
 	                                 const CharSequence& seq) = 0;
+
+    virtual ~ViCommand(){}
 };
 
 /**

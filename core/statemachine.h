@@ -82,6 +82,7 @@ public:
 	struct TransitionBase
 	{
 		TransitionBase(const State& nextState) : nextState_(nextState) {}
+        virtual ~TransitionBase(){}
 
 		virtual int matches(const QString& input, int pos) const = 0;
 

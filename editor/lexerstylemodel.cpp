@@ -330,7 +330,7 @@ bool LexerStyleModel::setData(const QModelIndex& index, const QVariant& value,
 {
 	// Can only modify property nodes.
 	Node* node = nodeFromIndex(index);
-	if (!node || !node->data() || !node->data()->type() == PropertyNode)
+    if (!node || !node->data() || !(node->data()->type() == PropertyNode))
 		return false;
 
 	if (role != Qt::EditRole)

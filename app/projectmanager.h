@@ -109,6 +109,7 @@ private:
 			ProjectManager::finishLoad();
 			delete this;
 		}
+        virtual ~OpenCallback(){}
 	};
 };
 
