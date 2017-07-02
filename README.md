@@ -1,11 +1,11 @@
 kscope
 ======
-Source editing environment for Linux and Windows</br>
-Based on original kscope 1.9.4 with some errors fixed on windows.</br>
+Source code viewer for Linux.</br>
+Based on original kscope 1.9.4 with some errors fixed.</br>
 For now almost the same with original one.</br>
 
 # 更新
-2017-07-01：迁移到qt5；可以编译，但功能未测；
+2017-07-01：迁移到qt5；
 
 # 编译
 1. 安装qt5
