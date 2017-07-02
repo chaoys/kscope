@@ -50,11 +50,7 @@ FORMS += querydialog.ui \
     projectdialog.ui \
     configenginesdialog.ui \
     openprojectdialog.ui
-INCLUDEPATH += .. \
-    $${QSCI_INCLUDE_PATH} \
-    .
-
-LIBS += -L$${QSCI_LIB_PATH} -lqscintilla2
+INCLUDEPATH += .. .
 
 CONFIG(debug, debug|release):LIBS += -L../core/debug -lkscope_core -L../cscope/debug -lkscope_cscope -L../editor/debug -lkscope_editor
 CONFIG(release, debug|release):LIBS += -L../core/release -lkscope_core -L../cscope/release -lkscope_cscope -L../editor/release -lkscope_editor

@@ -23,11 +23,7 @@ SOURCES += viscintilla.cpp \
     editor.cpp \
     configdialog.cpp \
     findtextdialog.cpp
-INCLUDEPATH += .. \
-    $${QSCI_INCLUDE_PATH} \
-    .
-LIBS += -L$${QSCI_LIB_PATH} \
-    -lqscintilla2
+INCLUDEPATH += .. .
 
 CONFIG(debug, debug|release):LIBS += -L../core/debug -lkscope_core
 CONFIG(release, debug|release):LIBS += -L../core/release -lkscope_core

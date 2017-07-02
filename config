@@ -7,16 +7,12 @@
 # INSTALL_PATH/lib, etc.
 INSTALL_PATH = 
 
-# The root path of the QScintilla installation.
-QSCI_INCLUDE_PATH = 
-QSCI_LIB_PATH = 
-
 # --------------------------- END: EDIT ME ------------------------------------
 
 CONFIG += qscintilla2
 
 # The following lines should normally not be edited.
-#CONFIG += console
+
 CONFIG += debug_and_release \
     warn_all 
 CONFIG(release, debug|release) {
