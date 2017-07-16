@@ -37,7 +37,8 @@ QueryResultDialog::QueryResultDialog(QWidget* parent)
 
 	// Close the dialogue when a selection is made.
 	connect(view_, SIGNAL(locationRequested(const Core::Location&)), this,
-	        SLOT(accept()));
+		SLOT(close()));
+	setAttribute(Qt::WA_DeleteOnClose, true);
 }
 
 /**
