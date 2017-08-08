@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  ***************************************************************************/
 
-#ifndef __CORE_STRINGS_H__
-#define __CORE_STRINGS_H__
+#ifndef __CORE_CORESTRINGS_H__
+#define __CORE_CORESTRINGS_H__
 
 #include "globals.h"
 
@@ -92,4 +92,4 @@ struct Strings : public QObject
 
 } // namespace KScope
 
-#endif // __CORE_STRINGS_H__
+#endif // __CORE_CORESTRINGS_H__

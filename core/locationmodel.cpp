@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include "locationmodel.h"
-#include "strings.h"
+#include "corestrings.h"
 #include "images.h"
 #include <QDir>
 

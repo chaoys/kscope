@@ -20,7 +20,7 @@
 
 #include "queryresultdock.h"
 #include "projectmanager.h"
-#include "strings.h"
+#include "appstrings.h"
 
 namespace KScope
 {

@@ -25,7 +25,7 @@ HEADERS += openprojectdialog.h \
     settings.h \
     session.h \
     queryview.h \
-    strings.h \
+    appstrings.h \
     locationhistory.h \
     projectmanager.h \
     projectfilesdialog.h \

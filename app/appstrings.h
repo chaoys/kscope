@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  ***************************************************************************/
 
-#ifndef __APP_STRINGS_H__
-#define __APP_STRINGS_H__
+#ifndef __APP_APPSRINGS_H__
+#define __APP_APPSTRINGS_H__
 
 #include <QString>
 
@@ -117,4 +117,4 @@ public:
 
 } // namespace KScope
 
-#endif // __APP_STRINGS_H__
+#endif // __APP_APPSTRINGS_H__
