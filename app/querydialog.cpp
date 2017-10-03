@@ -23,7 +23,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "querydialog.h"
-#include "strings.h"
+#include "appstrings.h"
 
 namespace KScope
 {
