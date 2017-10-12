@@ -18,7 +18,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  ***************************************************************************/
 
-#ifndef __APP_APPSRINGS_H__
+#ifndef __APP_APPSTRINGS_H__
 #define __APP_APPSTRINGS_H__
 
 #include <QString>
